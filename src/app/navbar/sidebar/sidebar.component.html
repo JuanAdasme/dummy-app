@@ -1,0 +1,14 @@
+<div perfectScrollbar class="sidebar-content">
+  <nav class="nav-list">
+    <h3>Sidebar</h3>
+    <ng-container *ngFor="let group of navGroups">
+      <div class="nav-header"></div>
+      <!-- Al atributo option se le pasa 'group', que representa un elemento de la barra de navegación. -->
+      <!-- (subElements) está escuchando en caso de que el componente app-sidebar-item emita los subelementos, y los pasa a la función clickOnGroup. -->
+      <app-sidebar-item
+        [option]="group"
+        (subElements)="clickOnGroup($event)"
+      ></app-sidebar-item>
+    </ng-container>
+  </nav>
+</div>

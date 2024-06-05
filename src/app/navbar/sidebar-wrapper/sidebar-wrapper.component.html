@@ -1,0 +1,14 @@
+<div class="sidebar-wrapper">
+  <div class="sidebar-content">
+    <!-- (subElements) se emite desde app-sidebar al hacer click en un elemento con subelementos. -->
+    <!-- Gatilla la función displayVerticalLayout() para mostrar la barra vertical con los subelementos que vienen en $event. -->
+    <app-sidebar (subElements)="displayVerticalLayout($event)"></app-sidebar>
+  </div>
+  <div class="vertical-layout">
+    <!-- El atributo [hidden] determina si la barra vertical se oculta o se muestra. [subElements] son los subelementos que se muestran en la barra vertical. -->
+    <app-vertical-layout
+      [hidden]="isHidden"
+      [subElements]="subElements"
+    ></app-vertical-layout>
+  </div>
+</div>
