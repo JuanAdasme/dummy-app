@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { NavElement } from '../shared/nav-element.model';
+import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { SidebarStateService } from '../sidebar-state.service';
 
 @Component({
   selector: 'app-vertical-layout',
@@ -10,12 +10,6 @@ import { NgFor } from '@angular/common';
   styleUrl: './vertical-layout.component.scss',
 })
 export class VerticalLayoutComponent {
-  // Este atributo recibe los subelementos del elemento clickeado en la barra de navegación. El flujo es el siguiente:
-  // sidebar-item --(componente padre)--> sidebar --(componente padre)--> sidebar-wrapper --(componente hijo)--> vertical-layout
-  @Input()
-  subElements: NavElement[];
-
-  constructor() {
-    this.subElements = [];
-  }
+  // Se inyecta el estado del sidebar para obtener los subelementos en el tempate.
+  constructor(public sidebarState: SidebarStateService) {}
 }

@@ -3,7 +3,7 @@
   <!-- De no ser así, establece un evento (click) que se establece si el elemento tiene subelementos, y los envía como parámetro. -->
   <a
     [attr.href]="option.href"
-    (click)="option.items?.length && emitItems(option.items || [])"
+    (click)="updateItems(option.items || [])"
     aria-label="Youtube"
     target="_self"
     rel="noopener"

@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { SidebarItemComponent } from '../sidebar-item/sidebar-item.component';
 import { NavElement } from '../shared/nav-element.model';
 
@@ -11,12 +11,6 @@ import { NavElement } from '../shared/nav-element.model';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  isVerticalSubmenuOpen = false;
-
-  // Esta variable emite al componente padre los subelementos del elemento clickeado en la barra de navegación.
-  @Output()
-  subElements = new EventEmitter<NavElement[]>();
-
   // Datos de prueba para la barra de navegación. Cada elemento tiene id y title, y además puede tener href y una lista de subelementos.
   navGroups: NavElement[] = [
     {
@@ -47,9 +41,4 @@ export class SidebarComponent {
       href: 'https://www.youtube.com/',
     },
   ];
-
-  // Se gatilla al hacer click en un elemento de la barra de navegación. Recibe los subelementos del elemento clickeado y los emite al componente padre.
-  clickOnGroup(items: NavElement[]) {
-    this.subElements.emit(items);
-  }
 }

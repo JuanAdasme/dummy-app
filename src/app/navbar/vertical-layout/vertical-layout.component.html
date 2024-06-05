@@ -1,6 +1,6 @@
 <div class="vertical-layout-items">
-  <!-- Cada 'option' es un elemento de la barra vertical desplegada junto a la barra de navegación. -->
-  <ng-container *ngFor="let option of subElements">
+  <!-- Cada 'option' es un elemento de la barra vertical desplegada junto a la barra de navegación. Se obtienen desde el estado del sidebar. -->
+  <ng-container *ngFor="let option of sidebarState.subElements">
     <a
       class="vertical-anchor"
       [href]="option.href"
